@@ -92,10 +92,10 @@ void primetree(Graph &G,Elemtype data) {     //普利姆算法；
 	T.data[T.length].data = head;
 	T.length++;
 	int adjex = -1,adiex=-1;
-	while (T.length != G.vernum) {
+	while (T.length != G.vernum) {  //当已经找到最小生成树的顶点书目不等于图中顶点数目
 		int min = 20; //让min为一个较大值；
 		for (int i = 0; i < T.length; i++) {
-			for (int j = 0; j < G.vernum; j++) {
+			for (int j = 0; j < G.vernum; j++) {     //去遍历已经加入了最小生成树的顶点的边，找到权值最小的边  
 				if (G.graph[T.data[i].data][j] != 0 && G.graph[T.data[i].data][j] < min && compre(T.data[i].data, j) == 0) {
 					min = G.graph[T.data[i].data][j];
 					adiex = T.data[i].data; 
